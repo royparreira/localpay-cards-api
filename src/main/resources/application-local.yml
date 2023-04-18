@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      authentication-database: ${LOCAL_AUTH_DB}
+      database: ${LOCAL_PAYMENT_DB}
+      username: ${LOCAL_DB_USER}
+      password: ${LOCAL_DB_PWD}
+
