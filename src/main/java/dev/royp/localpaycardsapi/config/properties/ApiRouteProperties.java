@@ -1,4 +1,4 @@
-package dev.royp.localpaycardsapi.config;
+package dev.royp.localpaycardsapi.config.properties;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

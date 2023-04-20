@@ -1,6 +1,6 @@
 package dev.royp.localpaycardsapi.entrypoint.router;
 
-import dev.royp.localpaycardsapi.config.ApiRouteProperties;
+import dev.royp.localpaycardsapi.config.properties.ApiRouteProperties;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +16,7 @@ class CreditCardApiRouterTest {
 
   public static final String EXPECTED_CREDIT_CARDS_ROUTE = "/credit_cards";
   public static final String EXPECTED_CREDIT_CARDS_ID_ROUTE = "/credit_cards/fakeId";
+
   @Autowired private WebTestClient webTestClient;
 
   @Test

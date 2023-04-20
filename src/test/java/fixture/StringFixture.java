@@ -1,9 +1,13 @@
-package dev.royp.localpaycardsapi.fixture;
+package fixture;
 
 import java.util.Random;
 import java.util.UUID;
+import org.apache.commons.lang3.StringUtils;
 
 public class StringFixture {
+
+  public static final String ZERO = "0";
+
   private StringFixture() {}
 
   private static final String[] firstNames = {
@@ -30,13 +34,13 @@ public class StringFixture {
     return UUID.randomUUID().toString();
   }
 
-  public static String getRandomNumericStringWithSize(int size) {
+  public static String getRandomLongNumericStringWithSize(int size) {
 
     var randomValueBoundary = getRandomValueBoundaryForSize(size);
 
-    long cvv = new Random().nextLong(randomValueBoundary);
+    long randomLong = new Random().nextLong(randomValueBoundary);
 
-    return Long.toString(cvv);
+    return convertLongToNormalizedString(randomLong, size);
   }
 
   private static long getRandomValueBoundaryForSize(int size) {
@@ -47,5 +51,9 @@ public class StringFixture {
     }
 
     return randomValueBoundary;
+  }
+
+  private static String convertLongToNormalizedString(Long number, int size) {
+    return StringUtils.leftPad(number.toString(), size, ZERO);
   }
 }
